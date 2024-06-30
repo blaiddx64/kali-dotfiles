@@ -1,5 +1,8 @@
 #!/bin/sh
 #
+# Set DOTFILES DIR
+export DOTFILES_DIR=$(pwd)
+
 # Update Repositories
 sudo apt update
 
@@ -45,6 +48,7 @@ cd polybar-themes/
 rm -rf ~/.config/polybar/
 
 # Copy Files
+cd $DOTFILES_DIR
 cp .config/ ~/ -r
 cp screen_wallpaper.* ~/
 
